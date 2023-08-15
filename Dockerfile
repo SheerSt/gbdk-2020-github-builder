@@ -1,8 +1,10 @@
 # Container image that runs your code
 FROM gcc
 
-ADD https://github.com/gbdk-2020/gbdk-2020/releases/download/4.0.6/gbdk-linux64.tar.gz /usr/lib/gbd.tar.gz
-RUN tar -xvf /usr/lib/gbd.tar.gz -C /usr/lib/
+RUN sudo apt-get install git make cmake python3-pip
+RUN python3 -m pip install img2gb
+ADD https://github.com/gbdk-2020/gbdk-2020/releases/download/4.0.6/gbdk-linux64.tar.gz /usr/gbd.tar.gz
+RUN tar -xvf /usr/gbd.tar.gz -C /usr --strip-components=1 gbdk/bin gbdk/lib gbdk/include
 
 WORKDIR /github/workspace
 RUN ls
