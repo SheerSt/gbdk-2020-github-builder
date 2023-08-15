@@ -21,6 +21,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - --progress=plain
     - ${{ inputs.subdirectory }}
     - ${{ inputs.output-name }}
     - ${{ inputs.source }}
