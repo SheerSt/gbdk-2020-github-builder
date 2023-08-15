@@ -20,8 +20,9 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
+  build_args:
     - --progress=plain
+  args:
     - ${{ inputs.subdirectory }}
     - ${{ inputs.output-name }}
     - ${{ inputs.source }}
