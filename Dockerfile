@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM ubuntu22.04
+FROM ubuntu
 
 RUN apt-get install make python3-pip
 RUN python3 -m pip install img2gb
