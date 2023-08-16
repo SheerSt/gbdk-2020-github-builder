@@ -1,4 +1,4 @@
 #!/bin/sh -l
 
 export CPATH="/usr/include"
-make
+make export && make
