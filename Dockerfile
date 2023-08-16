@@ -6,8 +6,9 @@ RUN apt-get upgrade -y
 RUN apt-get install -y make
 RUN apt-get install -y python3-pip
 RUN python3 -m pip install img2gb
-ADD https://github.com/gbdk-2020/gbdk-2020/releases/download/4.0.6/gbdk-linux64.tar.gz /usr/gbd.tar.gz
-RUN tar -xvf /usr/gbd.tar.gz -C /usr --strip-components=1 gbdk/bin gbdk/lib gbdk/include
+ADD https://github.com/gbdk-2020/gbdk-2020/releases/download/4.0.6/gbdk-linux64.tar.gz /opt/gbd.tar.gz
+RUN tar -xvf /usr/gbd.tar.gz -C /opt # --strip-components=1 gbdk/bin gbdk/lib gbdk/include
+RUN ls /opt
 
 WORKDIR /github/workspace
 RUN ls
